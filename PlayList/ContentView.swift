@@ -2,23 +2,30 @@
 //  ContentView.swift
 //  PlayList
 //
-//  Created by user256729 on 5/8/24.
+//  Created by user256729 on 5/11/24.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var inspiration = MusicInspiration.examples()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView{
+            ScrollView{
+                ForEach(inspiration){ inspiration in Text(inspiration.name)
+                }
+            }
+            .navigationTitle("Music")
         }
-        .padding()
     }
 }
 
-#Preview {
-    ContentView()
+
+
+struct ContentView_Previews: PreviewProvider{
+    static var previews: some View {
+        ContentView()
+    }
 }
