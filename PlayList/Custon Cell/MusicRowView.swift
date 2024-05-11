@@ -22,8 +22,13 @@ struct MusicRowView: View {
             VStack(alignment: .leading, spacing:  7.0) {
                 Text(inspiration.name)
                 
-                Text(inspiration.description)
-                    .font(.caption)
+                HStack {
+                    if inspiration.ratedE{
+                        Image(systemName: "e.square.fill")
+                    }
+                                Text(inspiration.description)
+                        .font(.caption)
+                }
             }
             .padding(.vertical, 5)
             Spacer()

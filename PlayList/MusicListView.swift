@@ -26,9 +26,11 @@ struct MusicListView: View {
                     VStack(alignment: .leading, spacing: 1) {
                         HStack{
                             Image(systemName: "arrow.down.circle.fill")
+                                .padding(.top)
                             Image(systemName: "person.fill.badge.plus")
+                                .padding(.top)
                             Spacer()
-                            Image(systemName: "play.circle.fill").resizable(resizingMode: .stretch).aspectRatio(contentMode: .fit).foregroundStyle(.orange).frame(width: 33)
+                            Image(systemName: "play.circle.fill").resizable(resizingMode: .stretch).aspectRatio(contentMode: .fit).padding(.top).foregroundStyle(.orange).frame(width: 33)
                         }.padding(.horizontal, 16)
                         
                         VStack(alignment: .leading){
