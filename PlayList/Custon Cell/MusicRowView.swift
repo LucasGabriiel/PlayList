@@ -13,34 +13,36 @@ struct MusicRowView: View {
     
     
     var body: some View {
-        HStack(alignment: .top, spacing: 10) {
+        HStack( spacing: 8.0) {
             Image(inspiration.imageName)
                 .resizable()
-                .frame(width: 100, height: 100)
-                .clipShape(RoundedRectangle(cornerRadius: 5))
+                .frame(width: 80, height: 80)
+                .clipShape(RoundedRectangle(cornerRadius: 1))
             
-            VStack(alignment: .leading, spacing:  5) {
+            VStack(alignment: .leading, spacing:  7.0) {
                 Text(inspiration.name)
                 
                 Text(inspiration.description)
                     .font(.caption)
             }
-            .padding(.trailing, 10)
             .padding(.vertical, 5)
-            
-        }
+            Spacer()
+            VStack(alignment: .center) {
+                Spacer()
+                Image(systemName: "ellipsis")
+                    .resizable(resizingMode: .stretch)
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundStyle(.black)
+                .frame(height: 5)
+                Spacer()
+            }
+                
+        }.padding(.horizontal, 5)
     }
 }
 
-struct MusicRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack(alignment: .leading) {
-            MusicRowView(inspiration: MusicInspiration.example1())
-            MusicRowView(inspiration: MusicInspiration.example2())
-        }
-        .padding()
-    }
+#Preview {
+    MusicRowView(inspiration: .example1()).padding()
 }
-
 
 
