@@ -42,6 +42,20 @@ struct MusicListView: View {
                         }.padding(.horizontal, 16)
                             .padding(.top)
                         
+                        HStack(alignment: .top, spacing: 1.0){
+                            Image("grogu")
+                                .resizable(resizingMode: .stretch)
+                                .aspectRatio(contentMode: .fit)
+                                .padding(.top)
+                                .frame(width: 25)
+                                .clipShape(Circle())
+                                .padding(.horizontal, 16)
+                            Text("Playlist de Yosda")
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.black)
+                                .padding(.top)
+                        }
+                        
                         
                         ListaMusica(inspiration: inspiration)
                             
